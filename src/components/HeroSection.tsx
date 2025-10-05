@@ -59,12 +59,12 @@ const HeroSection = () => {
               />
               
               {/* Rating Card */}
-              <div className="absolute bottom-[25%] left-[-5%] lg:left-[-10%] w-[250px] lg:w-[280px] xl:w-[320px]">
+              <div className="absolute bottom-[25%] left-[-5%] lg:left-[-10%] w-[250px] lg:w-[280px] xl:w-[320px] z-20">
                 <RatingCard />
               </div>
 
               {/* Stats Card */}
-              <div className="absolute bottom-[5%] right-[-5%] lg:right-[-10%] w-[180px] lg:w-[200px] xl:w-[240px]">
+              <div className="absolute bottom-[5%] right-[-5%] lg:right-[-10%] w-[180px] lg:w-[200px] xl:w-[240px] z-20">
                 <StatsCard />
               </div>
             </div>
