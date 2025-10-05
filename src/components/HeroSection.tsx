@@ -20,7 +20,7 @@ const HeroSection = () => {
           <div className="flex flex-col space-y-6 lg:space-y-8 order-1">
             <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight">
               Your Resume{' '}
-              <span className="text-primary block lg:inline">
+              <span className="text-primary">
                 Deserves A Yes
               </span>{' '}
               Let's Make It Happen
@@ -49,10 +49,13 @@ const HeroSection = () => {
           {/* Right Content - Hero Image with Cards */}
           <div className="relative flex justify-center lg:justify-end order-2">
             <div className="relative w-full max-w-[400px] lg:max-w-[500px] xl:max-w-[600px]">
+              {/* Circular background */}
+              <div className="absolute inset-0 bg-secondary rounded-full w-full h-full -z-10"></div>
+              
               <img 
                 src={heroImage}
                 alt="Professional woman with books"
-                className="w-full h-auto object-contain"
+                className="w-full h-auto object-contain relative z-10"
               />
               
               {/* Rating Card */}
