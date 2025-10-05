@@ -1,52 +1,60 @@
 import React from 'react';
 import FeatureCard from './FeatureCard';
+import feature1 from '@/assets/feature-1.png';
+import feature2 from '@/assets/feature-2.png';
+import feature3 from '@/assets/feature-3.png';
+import feature4 from '@/assets/feature-4.png';
 
 const FeaturesSection = () => {
   const features = [
     {
       title: "A Resume Format That Gets You Interviews",
-      description: "Get a professionally written, keyword-optimized resume that lands in recruiter inboxes."
+      description: "Get a professionally written, keyword-optimized resume that lands in recruiter inboxes.",
+      image: feature1
     },
     {
       title: "A Cover Letter Style That Stands Out Strong",
-      description: "Stand out with a cover letter that speaks directly to the role and reflects your strengths."
+      description: "Stand out with a cover letter that speaks directly to the role and reflects your strengths.",
+      image: feature2
     },
     {
       title: "A LinkedIn Profile That Works For You",
-      description: "Attract the right eyes, start conversations, and show up in recruiter searches."
+      description: "Attract the right eyes, start conversations, and show up in recruiter searches.",
+      image: feature3
     },
     {
       title: "An Interview Strategy That Builds Confidence",
-      description: "Interview preperation with real HR professionals so you speak clearly confidently."
+      description: "Interview preperation with real HR professionals so you speak clearly confidently.",
+      image: feature4
     }
   ];
 
   return (
-    <section className="bg-white w-full overflow-hidden max-md:max-w-full">
-      <div className="bg-white flex w-full flex-col items-stretch justify-center px-20 py-12 max-md:max-w-full max-md:px-5">
-        <div className="max-md:max-w-full">
-          <div className="flex max-w-full w-[1240px] flex-col items-stretch text-black font-semibold justify-center">
-            <div className="flex w-full flex-col items-center text-lg max-md:max-w-full">
-              <div className="bg-[rgba(253,146,164,0.3)] flex items-center gap-2.5 justify-center px-5 py-2.5 rounded-md">
-                <div>What you Get</div>
-              </div>
+    <section className="bg-background w-full py-12 lg:py-16 xl:py-20">
+      <div className="container mx-auto px-5 lg:px-20 xl:px-24">
+        <div className="flex flex-col items-center space-y-8 lg:space-y-12">
+          {/* Section Header */}
+          <div className="flex flex-col items-center space-y-4 lg:space-y-6 text-center max-w-5xl">
+            <div className="bg-primary/10 px-5 lg:px-6 py-2 rounded-md">
+              <span className="text-foreground text-sm lg:text-base xl:text-lg font-semibold">
+                What You Get
+              </span>
             </div>
-            <div className="w-full text-[44px] text-center leading-[55px] mt-[26px] max-md:max-w-full">
-              <h2 className="max-md:max-w-full">
-                You're not just{" "}
-                <span style={{color: 'rgba(250,18,57,1)'}}>
-                  another applicant
-                </span>{" "}
-                and your resume shouldn't look like one
-              </h2>
-            </div>
+            <h2 className="text-2xl lg:text-4xl xl:text-5xl font-bold leading-tight px-4">
+              You're Not Just{' '}
+              <span className="text-primary">Another Applicant</span>{' '}
+              And Your Resume Shouldn't Look Like One
+            </h2>
           </div>
-          <div className="flex w-full items-center gap-5 text-center leading-[30px] flex-wrap mt-[50px] max-md:max-w-full max-md:mt-10">
+
+          {/* Feature Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 xl:gap-8 w-full">
             {features.map((feature, index) => (
               <FeatureCard
                 key={index}
                 title={feature.title}
                 description={feature.description}
+                image={feature.image}
               />
             ))}
           </div>

@@ -3,20 +3,23 @@ import React from 'react';
 interface FeatureCardProps {
   title: string;
   description: string;
+  image: string;
 }
 
-const FeatureCard: React.FC<FeatureCardProps> = ({ title, description }) => {
+const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, image }) => {
   return (
-    <article className="bg-white shadow-[0px_4px_16px_rgba(0,0,0,0.08)] flex min-w-60 min-h-[450px] flex-col items-stretch flex-1 shrink basis-[0%] pt-5 pb-[38px] px-5 rounded-[20px]">
-      <div className="flex w-full flex-col items-stretch text-xl text-black font-medium">
-        <div className="self-center flex min-h-[200px] max-w-full w-[300px]" />
-        <div className="flex w-full items-center gap-2.5 justify-center mt-[18px] px-2.5">
-          <h3 className="text-black flex-1 shrink basis-[0%] text-center">
-            {title}
-          </h3>
-        </div>
+    <article className="bg-card flex flex-col items-center p-5 lg:p-6 xl:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+      <div className="w-full h-40 lg:h-48 xl:h-56 flex items-center justify-center mb-4 lg:mb-6">
+        <img 
+          src={image}
+          alt={title}
+          className="w-full h-full object-contain"
+        />
       </div>
-      <p className="text-[rgba(89,89,89,1)] text-lg font-normal mt-6 text-center leading-[30px]">
+      <h3 className="text-foreground text-base lg:text-lg xl:text-xl font-semibold text-center mb-3 lg:mb-4">
+        {title}
+      </h3>
+      <p className="text-muted-foreground text-sm lg:text-base xl:text-lg text-center leading-relaxed">
         {description}
       </p>
     </article>
