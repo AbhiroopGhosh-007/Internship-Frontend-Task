@@ -13,11 +13,11 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative w-full bg-secondary overflow-hidden pt-[90px]">
+    <section className="relative w-full bg-secondary bg-red-200 overflow-hidden pt-[90px]">
       <div className="container mx-auto px-5 lg:px-20 xl:px-24 py-8 lg:py-16 xl:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
           {/* Left Content */}
-          <div className="flex flex-col space-y-6 lg:space-y-8 order-1">
+          <div className="flex flex-col space-y-8 lg:space-y-10 order-1 font-weight-normal">
             <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight">
               Your Resume{' '}
               <span className="text-primary">
@@ -33,13 +33,13 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 lg:gap-6">
               <button
                 onClick={handleResumePackages}
-                className="bg-white text-primary border-2 border-primary px-6 lg:px-8 py-3 rounded-full text-sm lg:text-base font-bold uppercase hover:bg-primary/5 transition-colors shadow-[0_0_12px_0_rgba(250,18,57,0.4)]"
+                className="bg-white text-primary border border-primary px-4 lg:px-4 py-2 rounded-full text-sm lg:text-base font-semibold uppercase hover:bg-primary/5 transition-colors shadow-[0_0_12px_0_rgba(250,18,57,0.4)]"
               >
                 RESUME PAKAGES
               </button>
               <button
                 onClick={handleContactUs}
-                className="bg-primary text-primary-foreground px-6 lg:px-8 py-3 rounded-full text-sm lg:text-base font-bold uppercase hover:opacity-90 transition-opacity shadow-[0_0_12px_0_rgba(250,18,57,0.4)]"
+                className="bg-primary text-primary-foreground px-4 lg:px-4 py-2 rounded-full text-sm lg:text-base font-semibold uppercase hover:opacity-90 transition-opacity shadow-[0_0_12px_0_rgba(250,18,57,0.4)]"
               >
                 CONTACT US
               </button>
