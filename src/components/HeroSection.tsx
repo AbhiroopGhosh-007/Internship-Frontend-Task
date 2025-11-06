@@ -1,7 +1,7 @@
 import React from 'react';
 import RatingCard from './RatingCard';
 import StatsCard from './StatsCard';
-import heroImage from '@/assets/hero-image.png';
+import heroImage from '@/assets/HeroImage.png';
 
 const HeroSection = () => {
   const handleResumePackages = () => {
@@ -13,8 +13,8 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative w-full bg-secondary bg-red-200 overflow-hidden pt-[90px]">
-      <div className="container mx-auto px-5 lg:px-20 xl:px-24 py-8 lg:py-16 xl:py-20">
+    <section className="relative w-full bg-secondary bg-red-300 overflow-hidden pt-[90px]">
+      <div className="container mx-auto px-5 lg:px-20 xl:px-24 py-6 lg:py-15 xl:py-18">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
           {/* Left Content */}
           <div className="flex flex-col space-y-8 lg:space-y-10 order-1 font-weight-normal">
@@ -33,7 +33,7 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 lg:gap-6">
               <button
                 onClick={handleResumePackages}
-                className="bg-white text-primary border border-primary px-4 lg:px-4 py-2 rounded-full text-sm lg:text-base font-semibold uppercase hover:bg-primary/5 transition-colors shadow-[0_0_12px_0_rgba(250,18,57,0.4)]"
+                className="bg-white text-primary border border-primary px-4 lg:px-4 py-2 rounded-full text-sm lg:text-base font-semibold uppercase hover:bg-red-500 hover:text-white transition-colors shadow-[0_0_12px_0_rgba(250,18,57,0.4)]"
               >
                 RESUME PAKAGES
               </button>
@@ -57,16 +57,16 @@ const HeroSection = () => {
                 alt="Professional woman with books"
                 className="w-full h-auto object-contain relative z-10"
               />
+{/* 
               
-              {/* Rating Card */}
               <div className="absolute bottom-[25%] left-[-5%] lg:left-[-10%] w-[250px] lg:w-[280px] xl:w-[320px] z-20">
                 <RatingCard />
               </div>
 
-              {/* Stats Card */}
+              
               <div className="absolute bottom-[5%] right-[-5%] lg:right-[-10%] w-[180px] lg:w-[200px] xl:w-[240px] z-20">
                 <StatsCard />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
