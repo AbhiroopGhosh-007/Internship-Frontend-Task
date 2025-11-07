@@ -99,6 +99,11 @@ All colors MUST be HSL.
 
 /* Hide Lovable badge */
 [data-lovable-badge],
-iframe[src*="lovable"] {
+iframe[src*="lovable"],
+a[href*="lovable.app"],
+a[href*="lovable.dev"] {
   display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
