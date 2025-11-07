@@ -101,9 +101,17 @@ All colors MUST be HSL.
 [data-lovable-badge],
 iframe[src*="lovable"],
 a[href*="lovable.app"],
-a[href*="lovable.dev"] {
+a[href*="lovable.dev"],
+div[data-lovable-badge],
+button[data-lovable-badge],
+[class*="lovable"],
+[id*="lovable"] {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;
   pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  z-index: -9999 !important;
 }
