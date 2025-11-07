@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X, Home as HomeIcon, Info, Settings, Tag, MessageCircle } from 'lucide-react';
 
-import CompanyLogo from '@/assets/CompanyLogo.png';
+import logo from '@/assets/logo.svg';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -25,7 +25,7 @@ const Header = () => {
           <div className="flex h-[70px] lg:h-[90px] items-center justify-between">
             {/* Logo */}
             <div className="flex items-center">
-              <img src={CompanyLogo} alt="Company Logo" className="h-8 lg:h-10" />
+              <img src={logo} alt="Company Logo" className="h-8 lg:h-10" />
             </div>
 
             {/* Desktop Navigation */}
@@ -63,7 +63,7 @@ const Header = () => {
           <div className="flex flex-col h-full px-6 py-6">
             {/* Mobile Menu Header */}
             <div className="flex items-center justify-between mb-12">
-              <img src={CompanyLogo} alt="Company Logo" className="h-8" />
+              <img src={logo} alt="Company Logo" className="h-8" />
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="p-2"
