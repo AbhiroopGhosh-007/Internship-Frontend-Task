@@ -24,14 +24,14 @@ const FeaturesSection = () => {
     },
     {
       title: "An Interview Strategy That Builds Confidence",
-      description: "Interview preperation with real HR professionals so you speak clearly confidently.",
+      description: "Interview preparation with real HR professionals so you speak clearly confidently.",
       image: feature4
     }
   ];
 
   return (
-    <section className="bg-background w-full py-12 lg:py-16 xl:py-20">
-      <div className="container mx-auto px-5 lg:px-20 xl:px-24">
+    <section className="figtree-uniquifier bg-background w-full py-10 lg:py-15 xl:py-20">
+      <div className="container mx-auto px-5 lg:px-14 xl:px-16">
         <div className="flex flex-col items-center space-y-8 lg:space-y-12">
           {/* Section Header */}
           <div className="flex flex-col items-center space-y-4 lg:space-y-6 text-center max-w-5xl">
@@ -48,7 +48,7 @@ const FeaturesSection = () => {
           </div>
 
           {/* Feature Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 xl:gap-8 w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4 xl:gap-4 w-full">
             {features.map((feature, index) => (
               <FeatureCard
                 key={index}
