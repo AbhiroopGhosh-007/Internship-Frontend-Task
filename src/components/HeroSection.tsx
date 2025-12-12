@@ -34,12 +34,13 @@ const HeroSection = () => {
               <span className=""> Make It Happen</span>
             </h1>
 
-            <div className="figtree-uniquifier space-y-2  lg:text-base xl:text-base mobile375:text-base leading-tight text-foreground max-w-none lg:max-w-[600px] xl:max-w-[500px]">
-              If Your Resume Isn't Getting Responses, It's Time For An Upgrade.
-              Get An ATS-Optimized Resume Crafted By HR Experts To Help You
-              Land More Interviews. Our Resumes Are Designed To Get Your Foot 
-              In The Door And Place Your Name At The Top Of The Shortlist.  
-            </div>
+            <div className="figtree-uniquifier space-y-2 leading-[34px] text-foreground max-w-none lg:max-w-[600px] xl:max-w-[500px] text-base">
+  If your resume isn’t getting responses, it’s time for an upgrade. 
+  Get an ATS-optimized resume crafted by HR experts to help you 
+  land more interviews. Our resumes are designed to get your foot 
+  in the door and place your name at the top of the shortlist.
+</div>
+
 
             <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 lg:gap-6 text-base mobile375:mt-1">
               <button

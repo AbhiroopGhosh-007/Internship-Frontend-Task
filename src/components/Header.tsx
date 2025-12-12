@@ -77,46 +77,59 @@ const Header = () => {
       </header>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-secondary lg:hidden animate-in fade-in duration-200 flex flex-col">
-          <div className="px-6 py-6 flex justify-between items-center">
-            <img src={CompanyLogo} alt="Company Logo" className="h-8" />
+      {/* Mobile Menu */}
+{isMobileMenuOpen && (
+  <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm lg:hidden">
+    
+    {/* Sliding Panel */}
+    <div className="w-[78%] h-full bg-rose-50 shadow-xl animate-in slide-in-from-right duration-300 flex flex-col ml-auto">
 
+      
+      {/* Top Logo + Close Icon */}
+      <div className="px-6 py-6 flex justify-between items-center">
+        <img src={CompanyLogo} alt="Company Logo" className="h-10" />
+
+        <button
+          onClick={() => setIsMobileMenuOpen(false)}
+          className="p-2"
+        >
+          <X className="h-7 w-7 text-primary" />
+        </button>
+      </div>
+
+      {/* Navigation Items */}
+      <nav className="flex flex-col gap-8 px-6 mt-6">
+        {navItems.map((item) => {
+          const Icon = item.icon;
+          return (
             <button
+              key={item.label}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="p-2"
+              className="flex items-center gap-4 text-lg font-semibold text-gray-700"
             >
-              <X className="h-6 w-6 text-primary" />
+              <div className="w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-sm">
+                <Icon className="w-5 h-5 text-gray-800" />
+              </div>
+              {item.label}
             </button>
-          </div>
+          );
+        })}
+      </nav>
 
-          <nav className="flex flex-col gap-6 px-6 mt-6">
-            {navItems.map((item) => {
-              const Icon = item.icon;
-              return (
-                <button
-                  key={item.label}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center gap-4 text-lg font-medium hover:text-primary"
-                >
-                  <Icon className="w-5 h-5" />
-                  {item.label}
-                </button>
-              );
-            })}
-          </nav>
+      {/* Contact Button */}
+      <button
+        onClick={() => {
+          handleGetQuote();
+          setIsMobileMenuOpen(false);
+        }}
+        className="mt-8 bg-primary text-white mx-6 mb-10 py-3 rounded-full text-base font-semibold uppercase shadow-lg"
+      >
+        CONTACT US
+      </button>
+    </div>
+  </div>
+)}
 
-          <button
-            onClick={() => {
-              handleGetQuote();
-              setIsMobileMenuOpen(false);
-            }}
-            className="mt-auto bg-primary text-white mx-6 mb-10 py-4 rounded-full text-base font-semibold uppercase shadow-[0_0_12px_rgba(250,18,57,0.4)]"
-          >
-            CONTACT US
-          </button>
-        </div>
-      )}
     </>
   );
 };
