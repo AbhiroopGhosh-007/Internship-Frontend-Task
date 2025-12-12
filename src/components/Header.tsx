@@ -1,55 +1,74 @@
-import React, { useState } from 'react';
-import { Menu, X, Home as HomeIcon, Info, Settings, Tag, MessageCircle } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import {
+  Menu,
+  X,
+  Home as HomeIcon,
+  Info,
+  Settings,
+  Tag,
+  MessageCircle,
+} from "lucide-react";
 
-import CompanyLogo from '@/assets/CompanyLogo.png';
+import CompanyLogo from "@/assets/CompanyLogo.png";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleGetQuote = () => {
-    console.log('Get quote clicked');
+    console.log("Get quote clicked");
   };
 
   const navItems = [
-    { label: 'Home', icon: HomeIcon},
-    { label: 'About Us', icon: Info },
-    { label: 'Our Services', icon: Settings },
-    { label: 'Pricing', icon: Tag },
-    { label: 'FAQ', icon: MessageCircle }
+    { label: "Home", icon: HomeIcon },
+    { label: "About Us", icon: Info },
+    { label: "Our Services", icon: Settings },
+    { label: "Pricing", icon: Tag },
+    { label: "FAQ", icon: MessageCircle },
   ];
+
+  // Disable body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isMobileMenuOpen]);
 
   return (
     <>
-      <header className="bg-white figtree-uniquifier fixed top-0 z-50 w-full shadow-sm">
+      {/* Header */}
+      <header className="bg-white fixed top-0 z-50 w-full shadow-sm">
         <div className="container mx-auto px-5 lg:px-14 xl:px-16">
           <div className="flex h-[70px] lg:h-[90px] items-center justify-between">
+            
             {/* Logo */}
-            <div className="flex items-center">
-              <img src={CompanyLogo} alt="Company Logo" className="h-8 lg:h-10" />
-            </div>
+            <img src={CompanyLogo} alt="Company Logo" className="h-8 lg:h-10" />
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8 xl:gap-12 text-base font-medium text-foreground">
               {navItems.map((item) => (
-                <button key={item.label} className="hover:text-primary transition-colors">
+                <button
+                  key={item.label}
+                  className="hover:text-primary transition-colors"
+                >
                   {item.label}
                 </button>
               ))}
             </nav>
 
-            {/* Desktop CTA Button */}
+            {/* Desktop CTA */}
             <button
               onClick={handleGetQuote}
-              className="hidden lg:flex items-center justify-center bg-primary text-primary-foreground px-4 xl:px-6 py-2 rounded-full text-base font-medium hover:opacity-90 transition-opacity shadow-[0_0_12px_0_rgba(250,18,57,0.4)]"
+              className="hidden lg:flex bg-primary text-white px-6 py-2 rounded-full font-medium hover:opacity-90 shadow-[0_0_12px_rgba(250,18,57,0.4)]"
             >
               Get A Quote
             </button>
 
             {/* Mobile Menu Button */}
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={() => setIsMobileMenuOpen(true)}
               className="lg:hidden p-2"
-              aria-label="Toggle menu"
             >
               <Menu className="h-6 w-6" />
             </button>
@@ -57,50 +76,45 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-secondary lg:hidden animate-in fade-in duration-200">
-          <div className="flex flex-col h-full px-6 py-6">
-            {/* Mobile Menu Header */}
-            <div className="flex items-center justify-between mb-12">
-              <img src={CompanyLogo} alt="Company Logo" className="h-8" />
-              <button
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="p-2"
-                aria-label="Close menu"
-              >
-                <X className="h-6 w-6 text-primary" />
-              </button>
-            </div>
+        <div className="fixed inset-0 z-50 bg-secondary lg:hidden animate-in fade-in duration-200 flex flex-col">
+          <div className="px-6 py-6 flex justify-between items-center">
+            <img src={CompanyLogo} alt="Company Logo" className="h-8" />
 
-            {/* Mobile Navigation */}
-            <nav className="flex flex-col gap-6">
-              {navItems.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <button
-                    key={item.label}
-                    className="flex items-center gap-4 text-lg font-medium text-foreground hover:text-primary transition-colors mobile375:hover:text-primary mobile375:transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <Icon className="w-5 h-5" />
-                    {item.label}
-                  </button>
-                );
-              })}
-            </nav>
-
-            {/* Mobile CTA Button */}
             <button
-              onClick={() => {
-                handleGetQuote();
-                setIsMobileMenuOpen(false);
-              }}
-              className="mt-auto bg-primary text-primary-foreground px-8 py-4 rounded-full text-base font-bold uppercase hover:opacity-90 transition-opacity shadow-[0_0_12px_0_rgba(250,18,57,0.4)]"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="p-2"
             >
-              CONTACT US
+              <X className="h-6 w-6 text-primary" />
             </button>
           </div>
+
+          <nav className="flex flex-col gap-6 px-6 mt-6">
+            {navItems.map((item) => {
+              const Icon = item.icon;
+              return (
+                <button
+                  key={item.label}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center gap-4 text-lg font-medium hover:text-primary"
+                >
+                  <Icon className="w-5 h-5" />
+                  {item.label}
+                </button>
+              );
+            })}
+          </nav>
+
+          <button
+            onClick={() => {
+              handleGetQuote();
+              setIsMobileMenuOpen(false);
+            }}
+            className="mt-auto bg-primary text-white mx-6 mb-10 py-4 rounded-full text-base font-semibold uppercase shadow-[0_0_12px_rgba(250,18,57,0.4)]"
+          >
+            CONTACT US
+          </button>
         </div>
       )}
     </>

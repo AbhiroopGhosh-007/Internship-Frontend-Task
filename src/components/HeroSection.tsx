@@ -19,15 +19,15 @@ const HeroSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
           {/* Left Content */}
           <div className="flex flex-col space-y-8 lg:space-y-10 order-1 font-weight-normal mobile375:items-center mobile375:my-2 lg:items-start text-center lg:text-left">
-            <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight  ">
+            <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight ">
               Your Resume{" "}
-              <span className="relative inline-block text-primary my-4 mobile375:my-0">
+              <span className="relative inline-block text-primary my-0 lg:my-4 mobile375:hidden">
                 Deserves  A  Yes
                 {/* underline image positioned absolutely below the text */}
                 <img
                   src={Underline}
                   alt="Underline"
-                  className="absolute top-full mx-1 pointer-events-none mobile375:hidden"
+                  className="absolute top-full mx-1  pointer-events-none hidden lg:block"
                 />
               </span>{" "}
               <span className="text-black">Let's</span>

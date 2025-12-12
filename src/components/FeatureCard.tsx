@@ -19,7 +19,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, image }) 
       <h4 className="text-foreground text-base font-semibold text-center mb-3">
         {title}
       </h4>
-      <p className="text-muted-foreground text-sm text-center leading-relaxed ">
+      <p className="text-muted-foreground text-sm text-center leading-relaxed  ">
         {description}
       </p>
     </article>

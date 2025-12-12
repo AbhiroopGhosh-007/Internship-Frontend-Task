@@ -40,7 +40,7 @@ const FeaturesSection = () => {
                 What You Get
               </span>
             </div>
-            <h2 className="text-2xl lg:text-4xl xl:text-5xl font-semibold leading-tight px-4">
+            <h2 className="text-2xl lg:text-[40px]  font-semibold leading-tight px-4">
               You're Not Just{' '}
               <span className="text-primary font-semibold">Another Applicant</span>{' '}
               And Your Resume Shouldn't Look Like One
