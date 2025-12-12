@@ -21,13 +21,13 @@ const HeroSection = () => {
           <div className="flex flex-col space-y-8 lg:space-y-10 order-1 font-weight-normal mobile375:items-center mobile375:my-2 lg:items-start text-center lg:text-left">
             <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold leading-tight ">
               Your Resume{" "}
-              <span className="relative inline-block text-primary my-0 lg:my-4 mobile375:hidden">
+              <span className="relative inline-block text-primary my-0 lg:my-4">
                 Deserves  A  Yes
                 {/* underline image positioned absolutely below the text */}
                 <img
                   src={Underline}
                   alt="Underline"
-                  className="absolute top-full mx-1  pointer-events-none hidden lg:block"
+                  className="absolute top-full mx-1 mobile375:hidden pointer-events-none  lg:block"
                 />
               </span>{" "}
               <span className="text-black">Let's</span>
@@ -35,14 +35,14 @@ const HeroSection = () => {
             </h1>
 
             <div className="figtree-uniquifier space-y-2 leading-[34px] text-foreground max-w-none lg:max-w-[600px] xl:max-w-[500px] text-base">
-  If your resume isn’t getting responses, it’s time for an upgrade. 
-  Get an ATS-optimized resume crafted by HR experts to help you 
-  land more interviews. Our resumes are designed to get your foot 
-  in the door and place your name at the top of the shortlist.
+If Your Resume Isn't Getting Responses, It's Time For An Upgrade.
+              Get An ATS-Optimized Resume Crafted By HR Experts To Help You
+              Land More Interviews. Our Resumes Are Designed To Get Your Foot 
+              In The Door And Place Your Name At The Top Of The Shortlist.
 </div>
 
 
-            <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 lg:gap-6 text-base mobile375:mt-1">
+            <div className="flex flex-col sm:flex-row sm:justify-center items-center sm:items-center gap-4 lg:gap-6 text-base mobile375:mt-1">
               <button
                 onClick={handleResumePackages}
                 className="bg-white text-primary border border-primary w-auto mobile375:px-6 mobile375:py-3 px-4 sm:px-4 py-2 rounded-full text-base  uppercase hover:bg-red-500 hover:text-white transition-colors shadow-[0_0_12px_0_rgba(250,18,57,0.4)]"
