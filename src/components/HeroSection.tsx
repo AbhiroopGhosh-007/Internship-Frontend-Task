@@ -45,7 +45,7 @@ If Your Resume Isn't Getting Responses, It's Time For An Upgrade.
             <div className="flex flex-col sm:flex-row sm:justify-center items-center sm:items-center gap-4 lg:gap-6 text-base mobile375:mt-1">
               <button
                 onClick={handleResumePackages}
-                className="bg-white text-primary border border-primary w-auto mobile375:px-6 mobile375:py-3 px-4 sm:px-4 py-2 rounded-full text-base  uppercase hover:bg-red-500 hover:text-white transition-colors shadow-[0_0_12px_0_rgba(250,18,57,0.4)]"
+                className="bg-white  text-primary border border-primary w-auto mobile375:px-6 mobile375:py-3 px-4 sm:px-4 py-2 rounded-full text-base  uppercase hover:bg-red-500 hover:text-white transition-colors shadow-[0_0_12px_0_rgba(250,18,57,0.4)]"
               >
                 RESUME PAKAGES
               </button>
